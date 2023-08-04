@@ -4,7 +4,7 @@ import Homepage from "../components/Home";
 
 const Home = ({children} : any) => {
     return (
-        <div>
+        <div className="pt-20">
             {/* <Navbar></Navbar> */}
             {children}
             <Homepage></Homepage>

@@ -2,7 +2,7 @@ import React from 'react';
 
 const Friend = () => {
     return (
-        <div>
+        <div className='pt-20'>
             all friend
         </div>
     );

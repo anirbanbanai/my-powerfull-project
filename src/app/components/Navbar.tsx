@@ -31,14 +31,14 @@ const Navbar = () => {
     
     <li><Link className="text-3xl" href="/friend"><FaUserFriends/></Link></li>
    
-    <li ><Link className="text-3xl" href="/"><FiEdit/></Link></li>
+    <li ><Link className="text-3xl" href="/post"><FiEdit/></Link></li>
     <li><Link className="text-3xl" href="/"><FcSearch/></Link></li>
-    <li className="hidden sm:flex"><Link className="text-3xl" href="/"><IoMdNotificationsOutline/></Link></li>
-    <li><Link className="text-3xl" href="/"><BiMessageRoundedDots/></Link></li>
+    <li className="hidden sm:flex"><Link className="text-3xl" href="/notification"><IoMdNotificationsOutline/></Link></li>
+    <li><Link className="text-3xl" href="/message"><BiMessageRoundedDots/></Link></li>
             
     </>
     return (
-        <div className="w-full bg-slate-300">
+        <div className="w-full bg-slate-300 fixed z-30">
             <div className=" flex justify-between items-center">
                 <div className="">
                     <div className="dropdown">
@@ -58,6 +58,10 @@ const Navbar = () => {
                     <ul className="menu menu-horizontal px-1 flex justify-between">
                         {navItem2}
                     </ul>
+                </div>
+
+                <div>
+                <button className="bbutton"> Login</button>
                 </div>
                 
             </div>

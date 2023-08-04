@@ -6,6 +6,39 @@
 .m {
   border-radius: 2px;
   background: #f7f7f7;
-  box-shadow:  5px 5px 21px #636363,
-               -5px -5px 21px #ffffff;
+  box-shadow: 5px 5px 21px #636363,
+    -5px -5px 21px #ffffff;
+}
+
+.bbutton {
+  color: #090909;
+  padding: 0.7em 1.7em;
+  font-size: 18px;
+  border-radius: 0.5em;
+  background: #e8e8e8;
+  border: 1px solid #e8e8e8;
+  transition: all .3s;
+  box-shadow: 6px 6px 12px #c5c5c5,
+              -6px -6px 12px #ffffff;
+ }
+ 
+ .bbutton:active {
+  color: #666;
+  box-shadow: inset 4px 4px 12px #c5c5c5,
+              inset -4px -4px 12px #ffffff;
+ }
+
+ .input {
+  border-radius: 76px;
+  background: #f8e8e8;
+  box-shadow:  5px 5px 20px #635d5d,
+               -5px -5px 20px #ffffff;
+}
+
+.nnn3 {
+  margin-top: 30px;
+  border-radius: 60px;
+  background: #f7f3f3;
+  box-shadow: 5px 5px 0px #606060,
+    -5px -5px 0px #ffffff;
 }
