@@ -5,15 +5,15 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBszQMNHwD65lRMuGOW8RKqtOQyECaoD4Q",
-  authDomain: "my-wonder-project-3f5d3.firebaseapp.com",
-  projectId: "my-wonder-project-3f5d3",
-  storageBucket: "my-wonder-project-3f5d3.appspot.com",
-  messagingSenderId: "960817296618",
-  appId: "1:960817296618:web:2873d33842b9ee8cb05393"
+  apiKey: process.env.NEXT_PUBLIC_apiKeys,
+  authDomain: process.env.NEXT_PUBLIC_authDomains,
+  projectId: process.env.NEXT_PUBLIC_projectIds,
+  storageBucket: process.env.NEXT_PUBLIC_storageBuckets,
+  messagingSenderId: process.env.NEXT_PUBLIC_messagingSenderIds,
+  appId: process.env.NEXT_PUBLIC_appIds
 };
 
 // Initialize Firebase
- const app = initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
 
- export{app}
+export { app }

@@ -6,24 +6,44 @@ import { AuthContext } from '../components/AuthProvider';
 import { useForm } from 'react-hook-form';
 import swal from 'sweetalert';
 
+const img_hosting_token = process.env.NEXT_PUBLIC_ImageUploadToken;
 
 const Register = () => {
+    // console.log(img_hosting_token);
     const { user, createUser, updateUserProfile } = useContext(AuthContext);
     const [success, setSuccess] = useState([])
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const img_hosting_url = `https://api.imgbb.com/1/upload?key=${img_hosting_token}`;
+
+
     const onSubmit = (data) => {
+        console.log(data);
+        const formData = new FormData;
+        formData.append("image", data.photo[0])
+        fetch(img_hosting_url, {
+            method: "POST",
+            body: formData
+        }).then(res => res.json())
+            .then(imgres => {
+                if (imgres.success) {
+                    const imgURL = imgres.data.display_url;
+                    // console.log(imgURL);
+                    updateUserProfile(data.name,imgURL)
+                        .then(data => {
+                            console.log("use update", data);
+                        })
+                }
+            })
+
         createUser(data.email, data.password)
             .then(data => {
                 console.log(data);
                 swal("User created successfull!", "User created", "success");
                 setSuccess('User created successfull');
-                
-                
+
             })
-            updateUserProfile(data.name, data.photo)
-            .then(data=>{
-                console.log("use update" , data);
-            })
+
+
     };
 
     // swal({
@@ -42,6 +62,7 @@ const Register = () => {
     //       swal("Your imaginary file is safe!");
     //     }
     //   });
+
     return (
         <div className="pt-24 ">
             <h2 className="text-5xl font-bold text-center">Register Now</h2>
@@ -83,7 +104,7 @@ const Register = () => {
 
                 </div>
                 <div>
-                    <input {...register("photo", { required: true })}  type="file" className="mt-5 file-input file-input-bordered file-input-warning w-full " />
+                    <input {...register("photo", { required: true })} type="file" className="mt-5 file-input file-input-bordered file-input-warning w-full " />
                 </div>
 
                 <div className="flex items-center justify-center">

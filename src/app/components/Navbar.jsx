@@ -14,6 +14,7 @@ import { BiMessageRoundedDots } from 'react-icons/bi';
 import { FcSearch, FcDoNotInhale, FcReadingEbook, FcList, FcEditImage, FcShop } from 'react-icons/fc';
 import { AuthContext } from "./AuthProvider";
 import { useContext } from "react"
+import Image from "next/image";
 
 
 const Navbar = () => {
@@ -57,6 +58,10 @@ console.log(user);
         <li><Link className="text-3xl" href="/"><FcSearch /></Link></li>
         <li className="hidden md:flex"><Link className="text-3xl" href="/notification"><IoMdNotificationsOutline /></Link></li>
         <li><Link className="text-3xl" href="/message"><BiMessageRoundedDots /></Link></li>
+
+        {user && <li><Link className="text-3xl" href="/profile">
+            <img className="w-10 rounded-full" src={user.photoURL} alt="" />
+            </Link></li>}
 
     </>
     return (
