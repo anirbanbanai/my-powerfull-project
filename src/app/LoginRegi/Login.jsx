@@ -1,21 +1,23 @@
 "use client"
 
 import Link from 'next/link';
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import Bttnn from '../components/Bttnn';
 import { AuthContext } from '../components/AuthProvider';
 import { useForm } from 'react-hook-form';
+import swal from 'sweetalert';
 
 const Login = () => {
+    const [success, setSuccess] = useState([])
     const {loginUser} = useContext(AuthContext);
 
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit = (data) => {
-        createUser(data.email, data.password)
+        loginUser(data.email, data.password)
             .then(data => {
                 console.log(data);
                 swal("User login successfull!", "User Login", "success");
-                setSuccess('User created successfull')
+                setSuccess('User loginj sccessfull')
             })
     };
     return (
@@ -42,7 +44,7 @@ const Login = () => {
                 <div className="flex items-center justify-center">
                 <Bttnn className="mx-auto">Submir</Bttnn>
                 </div>
-               {/* <h3 className="text-green-500 text-center">{success}</h3> */}
+               <h3 className="text-green-500 text-center">{success}</h3>
             <h3 className="text-center">New to user? <Link className="text-red-500" href='/register'>Register</Link></h3>
             </form>
         </div>

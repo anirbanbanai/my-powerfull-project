@@ -8,7 +8,7 @@ import swal from 'sweetalert';
 
 
 const Register = () => {
-    const { user, createUser } = useContext(AuthContext);
+    const { user, createUser, updateUserProfile } = useContext(AuthContext);
     const [success, setSuccess] = useState([])
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit = (data) => {
@@ -16,7 +16,13 @@ const Register = () => {
             .then(data => {
                 console.log(data);
                 swal("User created successfull!", "User created", "success");
-                setSuccess('User created successfull')
+                setSuccess('User created successfull');
+                
+                
+            })
+            updateUserProfile(data.name, data.photo)
+            .then(data=>{
+                console.log("use update" , data);
             })
     };
 
@@ -77,7 +83,7 @@ const Register = () => {
 
                 </div>
                 <div>
-                    <input type="file" className="mt-5 file-input file-input-bordered file-input-warning w-full " />
+                    <input {...register("photo", { required: true })}  type="file" className="mt-5 file-input file-input-bordered file-input-warning w-full " />
                 </div>
 
                 <div className="flex items-center justify-center">

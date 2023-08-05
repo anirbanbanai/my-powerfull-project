@@ -17,8 +17,11 @@ import { useContext } from "react"
 
 
 const Navbar = () => {
-    const { user } = useContext(AuthContext);
-
+    const { user,logOut } = useContext(AuthContext);
+console.log(user);
+    const handleOut=()=>{
+        logOut()
+    }
     const navItem1 = <>
 
         <li className="text-4xl font-semibold ">Menu</li>
@@ -36,7 +39,7 @@ const Navbar = () => {
             </Link>
         </li>
             :
-            <li className="m mt-2"> <button className="text-4xl btn btn-warning"><RiLogoutCircleRLine
+            <li className="m mt-2"> <button onClick={handleOut}  className="text-4xl btn btn-warning"><RiLogoutCircleRLine
             /> <h2 className="text-2xl font-semibold">LogOut</h2></button></li>}
 
 
