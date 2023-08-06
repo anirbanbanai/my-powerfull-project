@@ -60,7 +60,7 @@ console.log(user);
         <li><Link className="text-3xl" href="/message"><BiMessageRoundedDots /></Link></li>
 
         {user && <li><Link className="text-3xl" href="/profile">
-            <img className="w-10 rounded-full" src={user.photoURL} alt="" />
+            <img className="w-14 rounded-full" src={user.photoURL} alt="" />
             </Link></li>}
 
     </>

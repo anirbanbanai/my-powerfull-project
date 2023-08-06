@@ -5,6 +5,7 @@ import Bttnn from '../components/Bttnn';
 import { AuthContext } from '../components/AuthProvider';
 import { useForm } from 'react-hook-form';
 import swal from 'sweetalert';
+import axios from 'axios';
 
 const img_hosting_token = process.env.NEXT_PUBLIC_ImageUploadToken;
 
@@ -18,6 +19,7 @@ const Register = () => {
 
     const onSubmit = (data) => {
         console.log(data);
+
         const formData = new FormData;
         formData.append("image", data.photo[0])
         fetch(img_hosting_url, {
@@ -27,10 +29,16 @@ const Register = () => {
             .then(imgres => {
                 if (imgres.success) {
                     const imgURL = imgres.data.display_url;
-                    // console.log(imgURL);
+                    const {name, email}=data;
+                    const allItem = {name, email, imgURL}
                     updateUserProfile(data.name,imgURL)
                         .then(data => {
                             console.log("use update", data);
+                        });
+
+                        axios.post("http://localhost:4000/user",allItem)
+                        .then(data=>{
+                            console.log(data);
                         })
                 }
             })
@@ -40,7 +48,7 @@ const Register = () => {
                 console.log(data);
                 swal("User created successfull!", "User created", "success");
                 setSuccess('User created successfull');
-
+               
             })
 
 
