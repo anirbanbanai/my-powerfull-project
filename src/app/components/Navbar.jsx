@@ -59,9 +59,7 @@ console.log(user);
         <li className="hidden md:flex"><Link className="text-3xl" href="/notification"><IoMdNotificationsOutline /></Link></li>
         <li><Link className="text-3xl" href="/message"><BiMessageRoundedDots /></Link></li>
 
-        {user && <li><Link className="text-3xl" href="/profile">
-            <img className="w-14 rounded-full" src={user.photoURL} alt="" />
-            </Link></li>}
+       
 
     </>
     return (
@@ -81,23 +79,27 @@ console.log(user);
                 <div className="mx-auto">
                     <h3 className="hidden sm:flex btn btn-ghost normal-case text-5xl font-bold text-red-500 bg-gradient-to-r from-red-500 to-blue-500 bg-clip-text text-transparent">Beust</h3>
                 </div>
-                <div className="mx-auto flex justify-between">
+                <div className="mx-auto flex justify-between items-center">
                     <ul className="menu menu-horizontal px-1 flex justify-between">
                         {navItem2}
                     </ul>
                 </div>
 
+                <div>
+                <Link className="text-3xl" href="/profile">
+            <img className="w-14 rounded-full" src={user?.photoURL} alt="" />
+            </Link>
+                </div>
+
                 <div className="hidden lg:flex">
-                    <div className="">
+                   {!user && <div className="">
                         <Link href="/login">
                             <button className="btn btn-warning ml-2 ">Login</button>
                         </Link>
-                    </div>
+                    </div>}
                     <Link href="/register">
-                        <button className="btn btn-warning ml-2">Register</button>
+                        <button className="btn btn-warning ml-2">Sign Up</button>
                     </Link>
-
-                    {user ? <p>Yes</p> : <p>No</p>}
                 </div>
 
             </div>

@@ -15,7 +15,7 @@ const Friendss = () => {
     <div className='pt-20'>
       hhhh
       {
-        data?.map(m => <div className='flex items-center gap-5 per2 md:w-3/4 lg:w-2/4 mx-auto p-6' key={m._id}>
+        data?.map(m => <div className='flex items-center gap-5 per2 md:w-3/4 lg:w-2/4 mx-auto p-6 m-3' key={m._id}>
           <img className='w-24 rounded-full' src={m.imgURL} alt="" />
           <div>
             <h2 className='text-2xl font-semibold'>{m.name}</h2>

@@ -43,8 +43,8 @@ const CreatePost = () => {
         if (imgres.success) {
           const imgURL = imgres.data.display_url;
           const { text, photo } = data;
-          const {photoURL,displayName} = user;
-          const menuItems = { text, imgURL,photoURL,displayName };
+          const {photoURL,displayName,email} = user;
+          const menuItems = { text, imgURL,photoURL,displayName,email , date: new Date};
           console.log(menuItems);
           axios.post('http://localhost:4000/post', menuItems)
             .then(data => {
