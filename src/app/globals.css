@@ -56,3 +56,10 @@
   box-shadow:  5px 5px 23px #666666,
                -5px -5px 23px #ffffff;
 }
+
+.nnn5 {
+  border-radius: 50px;
+  background: #f1efef;
+  box-shadow: 5px 5px 5px #bcbaba,
+    -5px -5px 5px #ffffff;
+}

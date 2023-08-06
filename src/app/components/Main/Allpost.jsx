@@ -20,6 +20,8 @@ const CreatePost = () => {
     //     setData(d)
     // })
     },[])
+
+
 console.log(data);
     return (
         <div>
