@@ -13,10 +13,7 @@ const UpdateBio = () => {
         console.log(data);
         const {email}=user;
         const allItem = {email, bio:data.bio}
-        axios.post("http://localhost:4000/bio", allItem)
-        .then(data=>{
-            console.log(data);
-        })
+        
     };
     return (
         <div className='pt-20'>

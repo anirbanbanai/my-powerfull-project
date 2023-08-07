@@ -16,6 +16,8 @@ const Editbio = () => {
         axios.post("https://my-final-server.vercel.app/bio", allItem)
         .then(data=>{
             console.log(data);
+            if(data.data.acknowledged === true)
+            swal("Post Updated!", "", "success");
         })
     };
     return (

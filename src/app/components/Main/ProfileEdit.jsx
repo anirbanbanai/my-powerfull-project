@@ -54,7 +54,14 @@ const ProfileEdit = ({ main }) => {
                 <AiOutlineHeart className="text-4xl" />
                 <FaRegComment className="text-4xl" />
                 <FaRegShareSquare className="text-4xl" />
+                
+                <Link href={`/components/Main/${_id}`}>
+                <button className='btn'>
                 <CiEdit className="text-4xl" />
+                </button>
+                </Link>
+              
+
                 <button onClick={() => handleDelete(_id)} className='btn'>
                     <RiDeleteBin5Line className="text-4xl" />
                 </button>
