@@ -7,14 +7,14 @@ import axios from'axios'
 const CreatePost = () => {
   const [data, setData] = useState([])
     useEffect(()=>{
-       fetch("http://localhost:4000/postt")
+       fetch("https://my-final-server.vercel.app/postt")
        .then(res=>res.json())
        .then(data=>{
-        // console.log(data);
+        
         setData(data)
        })
 
-    // axios.get("http://localhost:4000/postt")
+    // axios.get("https://my-final-server.vercel.app//postt")
     // .then(d=>{
     //     console.log(d);
     //     setData(d)

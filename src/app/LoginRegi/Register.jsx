@@ -36,7 +36,7 @@ const Register = () => {
                             console.log("use update", data);
                         });
 
-                        axios.post("http://localhost:4000/user",allItem)
+                        axios.post("https://my-final-server.vercel.app/user",allItem)
                         .then(data=>{
                             console.log(data);
                         })

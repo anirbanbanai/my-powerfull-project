@@ -3,7 +3,7 @@ import React from 'react';
 
 const IDData = async({params}) => {
     console.log(params?.id);
-const res = await fetch(`http://localhost:4000/userr/${params?.id}`);
+const res = await fetch(`https://my-final-server.vercel.app/userr/${params?.id}`);
 const data = await res.json();
 console.log(data);
     return (

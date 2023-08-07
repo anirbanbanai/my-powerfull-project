@@ -21,7 +21,7 @@ const ProfileEdit = ({ main }) => {
           })
           .then((willDelete) => {
             if (willDelete) {
-                axios.delete(`http://localhost:4000/post/${id}`)
+                axios.delete(`https://my-final-server.vercel.app/post/${id}`)
             .then(data => {
                 console.log(data);
                 swal("Poof! Your imaginary file has been deleted!", {

@@ -14,13 +14,13 @@ const MyProfile = () => {
     const [data, setData] = useState([])
     const [bio, setBio] = useState([])
     useEffect(() => {
-        fetch(`http://localhost:4000/post?email=${user?.email}`)
+        fetch(`https://my-final-server.vercel.app/post?email=${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setData(data);
             });
 
-        fetch(`http://localhost:4000/biod?email=${user?.email}`)
+        fetch(`https://my-final-server.vercel.app/biod?email=${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setBio(data);

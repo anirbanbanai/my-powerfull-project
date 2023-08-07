@@ -18,7 +18,7 @@ const CreatePost = () => {
   // console.log(user);
   const onSubmit = (data) => {
     // console.log(data);
-    // fetch("http://localhost:4000/post", {
+    // fetch("https://my-final-server.vercel.app//post", {
     //   method: "POST",
     //   header: {
     //     "content-type":"application/json"
@@ -46,7 +46,7 @@ const CreatePost = () => {
           const {photoURL,displayName,email} = user;
           const menuItems = { text, imgURL,photoURL,displayName,email , date: new Date};
           console.log(menuItems);
-          axios.post('http://localhost:4000/post', menuItems)
+          axios.post('https://my-final-server.vercel.app/post', menuItems)
             .then(data => {
               console.log(data.data);
               swal("Post created!", "", "success");

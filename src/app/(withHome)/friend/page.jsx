@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react'
 const Friendss = () => {
   const [data, setData] = useState([])
   useEffect(() => {
-    fetch("http://localhost:4000/userr")
+    fetch("https://my-final-server.vercel.app/userr")
       .then(res => res.json())
       .then(data => {
         setData(data);

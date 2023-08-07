@@ -13,7 +13,7 @@ const Editbio = () => {
         console.log(data);
         const {email}=user;
         const allItem = {email, bio:data.bio}
-        axios.post("http://localhost:4000/bio", allItem)
+        axios.post("https://my-final-server.vercel.app/bio", allItem)
         .then(data=>{
             console.log(data);
         })
