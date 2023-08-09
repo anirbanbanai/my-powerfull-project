@@ -49,10 +49,10 @@ const ProfileEdit = ({ main }) => {
             <h2> {text}</h2>
             <img className='w-3/4 mx-auto m-10 border' src={imgURL} alt="" />
 
-            <div className='w-2/4 flex  mx-auto justify-between'>
+            <div className='w-2/4 flex  mx-auto justify-between gap-5'>
                 {/* <FcLike className="text-4xl"/> */}
-                <AiOutlineHeart className="text-4xl" />
-                <FaRegComment className="text-4xl" />
+                <AiOutlineHeart className="text-4xl ml-2" />
+                <FaRegComment className="text-4xl ml-2" />
                 <FaRegShareSquare className="text-4xl" />
                 
                 <Link href={`/components/Main/${_id}`}>
